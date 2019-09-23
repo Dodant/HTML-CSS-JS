@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>다양한 입력</title></head>
+<body>
+<h3>다양한 입력</h3>
+<hr>
+<form action="">
+  컬러 :
+  <input type="color" onchange="document.body.style.color=this.value">
+  <br> 시간 :
+  <input type="time">
+  <br> 주 :
+  <input type="week">
+  <br> 날짜 :
+  <input type="datetime-local">
+  <br> 스핀 :
+  <input type="number" min="0.0" max="10.0" step="1.0">
+  <br> 슬라이드 바 :
+  <input type="range" min="0" max="100" list="temperatures">
+  <datalist id="temperatures">
+    <option value="10" label="Low"></option>
+    <option value="50" label="Medium"></option>
+    <option value="90" label="High"></option>
+  </datalist>
+  <br>
+  <fieldset>
+    <legend>회원정보</legend>
+    <input type="email" placeholder="id@host"> <br>
+    <input type="tel" placeholder="xxx-xxxx-xxxx"> <input type="submit">
+  </fieldset>
+</form>
+</body>
+</html>
