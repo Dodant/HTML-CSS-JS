@@ -1,0 +1,8 @@
+body { background-color: aliceblue;}
+h1 { color: brown; text-align: center;}
+
+section { background-color: pink;}
+#label {font-size: medium; color: blueviolet;}
+
+p, section { text-indent: 1em; font-size: 1em; font-family: sans-serif;}
+footer { background-color: orange;}

@@ -1,0 +1,7 @@
+body { background-color: aliceblue;}
+h1 { color: brown; text-align: center;}
+header { border-bottom-width: 1px; border-bottom-style: solid;}
+a { text-decoration: none;}
+h2 { color: blue; text-shadow: 1px 1px 3px blue;}
+p { text-indent: 1em; font-size: 1em; font-family: sans-serif;}
+footer { background-color: plum;}
