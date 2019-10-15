@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>산술연산</title></head>
+<body>
+<h3>산술연산</h3>
+<hr>
+<script>
+	var x=32;
+	var total = 100 + x*2/4 - 3; // total은 113
+	var div = x / 10; // div는 3.2
+	var mod = x % 2; // x를 2로 나눈 나머지, 0
+
+	document.write("x : " + x + "<br><br>");
+	document.write("100 + x*2/4 - 3 = " + total + "<br>");
+	document.write("x/10 = " + div + "<br>");
+	document.write("x%2 = " + mod + "<br>");
+</script>
+
+<h3>대입 연산</h3>
+<hr>
+<script>
+	var x=3, y=3, z=3;
+	document.write("x=" + x + ", y=" + y);
+	document.write(", z=" + z + "<br><br>");
+
+	x += 3; // x=x+3 -> x=6
+	y *= 3; // y=y*3 -> y=9
+	z %= 2; // z=z%2 -> z=1
+
+	document.write("x += 3; 실행 후, x=" + x + "<br>");
+	document.write("y *= 3; 실행 후, y=" + y + "<br>");
+	document.write("z %= 2; 실행 후, z=" + z);
+</script>
+
+<h3>비교 연산</h3>
+<hr>
+<script>
+	var x=13, y=7;
+	document.write("x=" + x + ", y=" + y + "<br><br>");
+	document.write("x == y : " + (x == y) + "<br>");
+	document.write("x != y : " + (x != y) + "<br>");
+	document.write("x >= y : " + (x >= y) + "<br>");
+	document.write("x > y : " + (x > y) + "<br>");
+	document.write("x <= y : " + (x <= y) + "<br>");
+	document.write("x < y : " + (x < y) + "<br>");
+</script>
+
+<h3>논리 연산</h3>
+<hr>
+<script>
+	var x=true; y=false;
+	document.write("x=" + x + ", y=" + y + "<br><br>");
+	document.write("x && y : "+ (x&&y) +"<br>");
+	document.write("x || y : "+ (x||y) +"<br>");
+	document.write("!x : " + (!x) +"<br>");
+	document.write("<hr>");
+	document.write("(3>2) && (3<4) : " + ((3>2)&&(3<4)) + "<br>");
+	document.write("(3==-2) || (-1<0) : " + ((3==2)||(-1<0)));
+</script>
+
+<h3>조건 연산</h3>
+<hr>
+<script>
+	var a=3, b=5;
+	document.write("a=" + a + ", b=" + b + "<br><br>");
+	document.write("두수의 차이 : " + ((a>b)?(a-b):(b-a)));
+</script>
+</body>
+</html>
