@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>별문자 출력하기</title>
+  <script>
+    var n = parseInt(prompt("정수를 입력하세요"));
+
+    function printStar(n){
+      if(isNaN(n)){
+        document.write("입력오류입니다.");
+      } else {
+        for (var i = 1; i <= n; i++){
+          for (var j = 1; j <= i; j++){
+            document.write('*');
+          }
+          document.write("<br>");
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>별문자 출력하기</h1>
+  <hr>
+  <script>
+    printStar(n);
+  </script>
+</body>
+</html>
