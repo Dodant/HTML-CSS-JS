@@ -32,3 +32,45 @@
 - 테두리 : border-radius, border-image
 - 태그의 배경 : background-color, background-image, background-position, background-size, background-repeat, background(short)
 - 시각적 효과 : text-shadow, box-shadow, cursor
+
+# JS
+
+## Function
+
+### 1. 인수의 수 
+ - 디폴트 매개변수
+ - 가변길이의 매개변수
+
+### 2. 익명함수 - 람다식
+ - lambda a : a*a
+ - let f1 = (x) => {return x*x;}
+ - f1(4) // 16
+
+### 3. 함수 hoisting
+{
+   a = mult(3,4);
+   console.log(a);
+   b = 12;
+   function mult(a,b) {return a+b}
+}
+
+### 4. closure 
+
+function makemult(m){
+    return (x) => {return m * x}
+}
+var bar = makemult(5)
+bar(9) // 45
+
+고차함수 (high order function)
+map(f, [a,b,c])
+-> [f(a), f(b), f(c)]
+
+reduce(f, [a,b,c], v0)
+-> f(f(f(a, v0), b), c) 
+
+Math.floor(4.5) // 4
+
+${   }
+for (let i = 0; i < 10; i++)
+     document.write('<td> ${i} </td>)
