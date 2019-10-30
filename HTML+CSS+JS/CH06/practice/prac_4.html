@@ -13,10 +13,15 @@
       case "화":
       case "수":
       case "목":
+      case "금":
         document.write(day + "는 출근");
         break;
-      default:
+      case "토":
+      case "일":
         document.write("휴일");
+        break;
+      default:
+        document.write("에러");
     }
   </script>
 </body>
