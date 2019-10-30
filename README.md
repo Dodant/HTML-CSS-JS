@@ -74,3 +74,70 @@ Math.floor(4.5) // 4
 ${   }
 for (let i = 0; i < 10; i++)
      document.write('<td> ${i} </td>)
+
+
+### JS 객체 유형
+	1. 코어 객체 (Array, Date, String, Math 타입 등)
+	2. HTML DOM 객체 (Document Object Model)
+	3. 브라우저 객체
+
+
+## 사용자 객체
+```javascript
+
+//생성자 함수
+function Student(name, score){
+	this.name = name
+	this.score = score
+	this.getGrade = function() {
+		// do something
+	}
+}
+
+let s1 = new Student("park", 100)
+let s2 = new Object()
+s2.name = "kim"
+s2.score = "80"
+s1.address = "gj" // 속성을 추가할 수 있다!!
+
+// prototype chain
+// 상속이 가능
+s1.__proto__
+s1.toString()
+
+Student.prototype.getScore = function(){
+	return this.score;
+}
+s1.getScore()
+
+Student.makeday = "2019/10"
+s1.makeday 	// error
+
+Student.prototype.makeday = "2019/10"
+Student.makeday	// 실행됨
+s1.makeday		// 실행됨
+
+function Student(name, score){
+	this.name = name
+	this.score = score
+	Student.prototype.getScore = function(){
+		return this.score
+	}
+}
+
+// CLASS 도입
+class Student {
+
+	constructor(name, score){
+		this.name = name
+		this.score = score
+	}
+	
+	getScore(){
+		return this.scroe
+	}
+}
+
+
+
+```
