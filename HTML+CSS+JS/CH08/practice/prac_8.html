@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+  <script type="text/javascript">
+    var n = 2;
+    function scale(obj) {
+      obj.style.transform = "scale(" + n + ",1)";
+      n += 1;
+    }
+  </script>
+</head>
+<body>
+  <h3>클릭하면 2,3,4배로 옆으로 늘어납니다.</h3>
+  <hr>
+  <img src="Lighthouse.png" alt="No Image" onclick="scale(this)">
+</body>
+</html>

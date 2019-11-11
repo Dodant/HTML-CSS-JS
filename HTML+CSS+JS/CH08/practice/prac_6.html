@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript">
+    function input(){
+      var value = prompt("HTML 텍스트 혹은 그냥 텍스트를 입력하세요")
+      document.getElementById("p").innerHTML = value;
+    }
+  </script>
+</head>
+<body>
+  <h3>innerHTML</h3>
+  <hr>
+  <p id="p" onclick="input()">이번 여름에는 어디로 여행을 갈까요?</p>
+</body>
+</html>
