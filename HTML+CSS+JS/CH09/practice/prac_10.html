@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>계산기 만들기</title>
+  <style>
+    button { width:60px; }
+  </style>
+  <script>
+    var exp = 0;
+    function typing(obj){
+      if (exp == 0) {
+        exp = obj.innerHTML
+      } else {
+        exp += obj.innerHTML
+      }
+      document.getElementById('win').value = exp;
+    }
+    function ev(){
+      exp = eval(exp);
+      document.getElementById('win').value = exp;
+    }
+    function clean(){
+      exp = 0
+      document.getElementById('win').value = exp;
+    }
+    function back(){
+      exp = exp.substring(0, exp.length-1)
+      if(exp.length == 0){
+        exp = 0
+      }
+      document.getElementById('win').value = exp;
+    }
+  </script>
+</head>
+<body>
+  <h3>계산기 만들기</h3>
+  <hr>
+  <input type="text" size=50 placeholder="0" id='win'>
+  <table>
+    <tr>
+      <td><button onclick="back()">Back</button></td>
+      <td><button onclick="clean()">CE</button></td>
+      <td><button onclick="clean()">C</button></td>
+      <td><button onclick="ev()">=</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="typing(this)">7</button></td>
+      <td><button onclick="typing(this)">8</button></td>
+      <td><button onclick="typing(this)">9</button></td>
+      <td><button onclick="typing(this)">/</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="typing(this)">4</button></td>
+      <td><button onclick="typing(this)">5</button></td>
+      <td><button onclick="typing(this)">6</button></td>
+      <td><button onclick="typing(this)">*</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="typing(this)">1</button></td>
+      <td><button onclick="typing(this)">2</button></td>
+      <td><button onclick="typing(this)">3</button></td>
+      <td><button onclick="typing(this)">-</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="typing(this)">0</button></td>
+      <td><button onclick="typing(this)">+</button></td>
+      <td><button>NONE</button></td>
+      <td><button>NONE</button></td>
+    </tr>
+  </table>
+</body>
+</html>
