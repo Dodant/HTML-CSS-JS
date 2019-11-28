@@ -12,19 +12,84 @@
       width: 100px;
       font-size: large;
     }
+    button, span {
+      font-size: large;
+    }
   </style>
   <script>
+    var setTime = 10
 
+    window.onload = function generate(){
+      var labels = document.getElementsByTagName('label')
+      var inputs = document.getElementsByTagName('input')
+      for (var i = 0; i < labels.length; i++){
+        labels[i].style.textDecoration = "none";
+      }
+      for (var i = 0; i < inputs.length; i++){
+        inputs[i].value = null;
+      }
+      var answer_span = document.getElementById('answer')
+      answer_span.innerHTML = 0;
+      for (var i = 0; i < labels.length; i++){
+        var text = ""
+        var operator = Math.floor(Math.random()*4)
+        text += Math.floor(Math.random()*100+1)
+        switch (operator) {
+          case 0:
+            text += "+"
+            break
+          case 1:
+            text += "-"
+            break
+          case 2:
+            text += "*"
+            break
+          case 3:
+            text += "/"
+            break
+        }
+        text += Math.floor(Math.random()*100+1)
+        labels[i].innerHTML = text
+      }
+      timerID = setInterval('countTime()', 1000)
+    };
+
+    function countTime(){
+      document.all.timer.innerHTML = setTime;
+      setTime--;
+      if (setTime < 0) {
+        clearInterval(timerID);
+        setTime = 10;
+        scoring();
+      }
+    }
+
+    function scoring(){
+      var labels = document.getElementsByTagName('label')
+      var inputs = document.getElementsByTagName('input')
+      var answers = 0;
+      for (var i = 0; i < labels.length; i++){
+        if (Math.floor(eval(labels[i].innerHTML)) == inputs[i].value){
+          answers++
+        } else {
+          labels[i].style.textDecoration = "line-through";
+        }
+      }
+      var answer_span = document.getElementById('answer')
+      answer_span.innerHTML = answers
+    }
   </script>
 </head>
 <body>
   <h3>산수 문제를 풀어 봅시다.</h3>
   <p>문제는 자동으로 생성되며, 10초가 지나면 자동 채점됩니다.</p>
-  <p>남은 시간 <span></span></p>
+  <p>남은 시간 <span id='timer'></span></p>
   <hr>
-  <label>1</label> <input type="text"><br>
-  <label>1</label> <input type="text"><br>
-  <label>1</label> <input type="text"><br>
-  <label>1</label> <input type="text"><br>
+  <label></label> <input type="text"><br>
+  <label></label> <input type="text"><br>
+  <label></label> <input type="text"><br>
+  <label></label> <input type="text"><br>
+  <button type="button" name="button" onclick="location.reload()">다시</button>
+  <span id='answer'>0</span>
 </body>
 </html>

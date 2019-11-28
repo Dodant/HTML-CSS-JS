@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>눈 내리는 등대</title>
+  <style>
+    body {
+      background-image : url('Lighthouse.png');
+      background-size : 100%;
+      background-repeat : no-repeat;
+    }
+    div {
+      position : absolute;
+      color : white;
+      font-size : 15px;
+    }
+  </style>
+</head>
+<body id='lh'>
+  <script>
+    var snow = new Array(30);
+    for(var i = 0; i < 30; i++){
+      var snow[i] = document.createElement('div');
+      var iw = Math.random()*innerWidth;
+      var ih = Math.random()*innerHeight;
+      snow[i].innerHTML = '*';
+      snow[i].style.position = 'absolute';
+      snow[i].style.color = 'white';
+      snow[i].style.fontSize = '30px';
+      snow[i].style.left = iw + 'px';
+      snow[i].style.top = ih + 'px';
+      setInterval("snowing(snow[i])", 600);
+      document.getElementById('lh').appendChild(snow[i]);
+    }
+    function snowing(obj){
+      var topheight  = Number(obj.style.top.substr(0, obj.style.top.length-2));
+      if (topheight > innerHeight){
+        obj.style.top = '0px';
+      } else {
+        obj.style.top = topheight + 0.2 + 'px';
+      }
+    }
+  </script>
+</body>
+</html>
