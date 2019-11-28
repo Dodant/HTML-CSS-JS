@@ -22,17 +22,20 @@
   <script>
     var snow = new Array(30);
     for(var i = 0; i < 30; i++){
-      var snow[i] = document.createElement('div');
-      var iw = Math.random()*innerWidth;
-      var ih = Math.random()*innerHeight;
+      snow[i] = document.createElement('div');
+      var iw = Math.random() * innerWidth;
+      var ih = Math.random() * innerHeight;
       snow[i].innerHTML = '*';
       snow[i].style.position = 'absolute';
       snow[i].style.color = 'white';
       snow[i].style.fontSize = '30px';
       snow[i].style.left = iw + 'px';
       snow[i].style.top = ih + 'px';
-      setInterval("snowing(snow[i])", 600);
+
       document.getElementById('lh').appendChild(snow[i]);
+      let a = i
+      setInterval(() => {snowing(snow[a])}, 10)
+
     }
     function snowing(obj){
       var topheight  = Number(obj.style.top.substr(0, obj.style.top.length-2));
