@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>폼으로 원호 그리기</title>
+  <style>
+    table {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <h3>폼으로 원호 그리기</h3>
+  <hr>
+  <form onsubmit="return false;">
+    <table>
+      <tr>
+        <td>x <input type="text" id="x"></td>
+        <td>y <input type="text" id="y"></td>
+      </tr>
+      <tr>
+        <td>반지름 <input type="text" id="radius"></td>
+        <td>방향
+         <select name="wise" id="wise">
+           <option value="0" selected>시계방향</option>
+           <option value="1">반시계방향</option>
+         </select>
+        </td>
+      </tr>
+      <tr>
+        <td>시작각도 <input type="text" id="startangle"></td>
+        <td>끝각도 <input type="text" id="endangle"></td>
+      </tr>
+      <tr>
+        <td>선굵기 <input type="text" id="linewidth"></td>
+        <td>선색 <input type="color" id="linecolor"></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="그리기" onclick="paint()"></td>
+        <td><input type="reset" value="지우기" onclick="erase()"></td>
+      </tr>
+    </table>
+  </form>
+  <canvas id="myCanvas" style="background-color:aliceblue" width="800" height="500"></canvas>
+  <script>
+  	var canvas = document.getElementById("myCanvas");
+  	var context = canvas.getContext("2d");
+
+
+    function paint() {
+      var wise = document.getElementById("wise").value
+      var clock;
+      if (wise == "1"){
+        clock = true
+      } else {
+        clock = false
+      }
+
+      context.beginPath()
+      context.strokeStyle = document.getElementById("linecolor").value
+      context.lineWidth = Number(document.getElementById("linewidth").value)
+      context.arc(
+        Number(document.getElementById("x").value),
+        Number(document.getElementById("y").value),
+        Number(document.getElementById("radius").value),
+        Number(document.getElementById("startangle").value)*(Math.PI / 180),
+        Number(document.getElementById("endangle").value)*(Math.PI / 180),
+        clock
+      )
+      context.stroke()
+    }
+
+    function erase(){
+      context.clearRect(0, 0, canvas.width, canvas.height)
+    }
+  </script>
+</body>
+</html>
