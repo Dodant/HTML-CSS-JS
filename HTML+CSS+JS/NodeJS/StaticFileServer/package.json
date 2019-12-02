@@ -1,0 +1,8 @@
+{
+   "name": "staticFileServer",
+   "version": "0.1.0",
+   "description": "A Web Server That Servers Static Files",
+   "dependencies": {
+      "mime": "~1.2.7"
+   }
+}
