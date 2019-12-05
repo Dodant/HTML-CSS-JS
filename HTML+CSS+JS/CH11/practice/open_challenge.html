@@ -42,15 +42,19 @@
           context.lineWidth = 1;
           context.font = "15px arial"
           context.fillText(
-            grades[i] + "학점 " + Number(inputs[i].value*100)/sum + "% : " + colors[i], 20, 20*(i+1))
+            grades[i] + "학점 " + Math.floor(Number(inputs[i].value*100)/sum) + "% : " + colors[i], 20, 20*(i+1))
           context.stroke()
         }
         for(var i = 0; i < 5; i++){
-          context.strokeStyle = colors[i]
-          endangle += (inputs[i].value*360/sum)*(Math.PI/180)
-          context.arc(400, 250, 100, startangle, endangle, false)
-          context.stroke()
+          context.beginPath()
+          context.fillStyle = colors[i]
           startangle = endangle
+          endangle += (inputs[i].value*360/sum)*(Math.PI/180)
+          context.moveTo(400,250)
+          context.arc(400, 250, 150, startangle, endangle, false)
+          context.lineTo(400,250)
+          context.stroke()
+          context.fill()
         }
       }
     </script>
