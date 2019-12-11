@@ -47,13 +47,12 @@
         }
         for(var i = 0; i < 5; i++){
           context.beginPath()
-          context.fillStyle = colors[i]
           startangle = endangle
           endangle += (inputs[i].value*360/sum)*(Math.PI/180)
           context.moveTo(400,250)
           context.arc(400, 250, 150, startangle, endangle, false)
-          context.lineTo(400,250)
-          context.stroke()
+          context.closePath()
+          context.fillStyle = colors[i]
           context.fill()
         }
       }
