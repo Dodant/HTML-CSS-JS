@@ -5,8 +5,8 @@
   <title>onwheel</title>
   <script>
     function wheel(e, obj){
-      if(e.wheelDelta < 0) obj.width--;
-      else obj.width++;
+      if(e.wheelDelta < 0) obj.width *= 1.05;
+      else obj.width *= 0.95;
     }
   </script>
 </head>

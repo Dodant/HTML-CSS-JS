@@ -12,7 +12,7 @@
       for (var i = 1; i < xArray.length; i++){
         ctx.lineTo(xArray[i], yArray[i])
       }
-      ctx.lineTo(xArray[0], yArray[0])
+      ctx.closePath()
       ctx.stroke()
     }
   </script>

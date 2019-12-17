@@ -17,9 +17,11 @@
   	context.moveTo(120, 20); // (120, 20)을 시작점으로 설정
   	context.lineTo(20, 50); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
   	context.lineTo(150, 120); // 경로에 (20, 50)에서 (150, 120)까지 직선 추가
-  	context.lineTo(120, 20); // 경로에 (150, 120)에서 (120, 20)까지 직선 추가
+  	// context.lineTo(120, 20); // 경로에 (150, 120)에서 (120, 20)까지 직선 추가
   	context.strokeStyle="magenta"; // 선의 색
+    context.closePath()
   	context.stroke(); // 경로를 캔버스에 그린다
+
   </script>
 </body>
 </html>

@@ -2,15 +2,11 @@
 <html lang="en">
 <head>
   <title>자바스크립트 연습</title>
-  <script type="text/javascript">
-    function change(){
-      document.getElementById("mySpan").style.cssText = "border: 2px dotted violet"
-    }
-  </script>
+
 </head>
 <body>
   <h3>자바스크립트란?
-    <button onclick="change()">
+    <button onclick="document.getElementById('mySpan').style.cssText = 'border: 2px dotted violet'">
       border</button>
     <button>p</button>
   </h3>
